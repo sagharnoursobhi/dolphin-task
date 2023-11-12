@@ -1,0 +1,26 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+@font-face {
+font-family: 'CustomFont';
+src: url('./assets/fonts/iran_sans_light.ttf') format('ttf'),
+        url('./assets/fonts/iran_sans_mobile_light.ttf') format('ttf'),
+        url('./assets/fonts/noto.ttf') format('ttf'),
+            url('./assets/fonts/Vazir.ttf') format('ttf');
+    font-weight: 300;
+    font-style: normal;
+}
+
+$font-primary: 'CustomFont', sans-serif;
+$font-secondary: 'Arial', sans-serif;
+
+html {
+    font-family: $font-primary;
+}
+
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; } /* Firefox 18- */
+input:focus::-moz-placeholder { color:transparent; } /* Firefox 19+ */
+input:focus:-ms-input-placeholder { color:transparent; } /* oldIE ;) */
