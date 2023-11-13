@@ -1,15 +1,21 @@
 <div class="w-[900px] mx-auto my-auto mt-5">
     <div class="item-box flex justify-between align-center">
         <div class="flex items-center justify-center">
-            <div class="relative">
+            <div class="relative drop-shadow-md">
               <input
                 type="text"
-                class="border-2 border-gray-300 bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none"
+                class="placeholder:px-7 bg-white h-10 px-5 pr-10 rounded text-sm focus:outline-none"
                 placeholder="Search"
+                maxlength="10"
+                minlength="20"
+                (focus)="focusHandler()" (blur)="blurHandler()"
               />
-              <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
-                <search-icon></search-icon>
-              </button>
+              <div class="absolute right-[-4px] top-[-4px] mt-3 mr-4">
+                <settings-icon [hidden]="settingconIsHidden"></settings-icon>
+              </div>
+              <div class="absolute left-[23px] top-[-3px] mt-3 mr-4">
+                <search-icon [hidden]="searchIconIsHidden"></search-icon>
+              </div>
             </div>
           </div>
         <div class="relative">
@@ -41,8 +47,9 @@
       
         <div class="flex justify-start mt-4">
           <span class="text-gray-400">Page</span>
-          <input type="number" class="w-[40px] border border-gray-400 rounded ml-2" name="" id="">
+          <span type="number" class="w-[40px] border text-center text-gray-400 border-gray-400 rounded ml-2">1</span>
           <span class="text-gray-400 ml-2">of 2</span>
+          <arrow-icon></arrow-icon>
         </div>
     </div>
 </div>
